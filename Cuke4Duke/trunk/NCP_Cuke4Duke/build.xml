@@ -3,18 +3,22 @@
 	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
 
 	<property name="version" value="0.0.1-SNAPSHOT" />
+	<property name="jruby.home" value="tools/jruby-1.6.1"/>
 
 	<property environment="env"/>
 	<property file="build.properties" />
 
+	<path id="jruby.classpath">
+		<pathelement location="${jruby.home}/lib/cuke4duke-0.4.4.jar"/>
+	</path>
+	
 	<path id="JUnit 4.libraryclasspath">
 		<pathelement location="lib/junit-4.8.2.jar"/>
 	</path>
 	<path id="project.classpath">
 		<pathelement location="bin"/>
 		<path refid="JUnit 4.libraryclasspath"/>
-		<pathelement location="lib/fitlibrary.jar"/>
-		<pathelement location="lib/fitnesse.jar"/>
+		<pathelement location="lib/cuke4duke-0.4.4.jar"/>
 		<pathelement location="lib/cglib-2.1_3-src.jar"/>
 		<pathelement location="lib/cglib-nodep-2.1_3.jar"/>
 		<pathelement location="lib/easymock.jar"/>
@@ -192,5 +196,12 @@
 		<jar jarfile="target/${ant.project.name}-${version}-tests.jar" basedir="target/test-classes"/>
 	</target>
 
+	<target name="setup-cuke4duke" >
+		<unzip src="${tools.dir}/jruby-bin-1.6.1.zip" dest="${tools.dir}" />
+		<exec executable="${jruby.home}/bin/jruby.exe">
+			<arg line="-S gem  install cuke4duke"/>
+		</exec>
+	</target>
+	
 </project>
 
