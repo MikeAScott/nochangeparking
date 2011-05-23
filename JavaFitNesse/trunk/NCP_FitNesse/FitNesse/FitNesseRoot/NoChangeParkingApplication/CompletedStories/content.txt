@@ -8,6 +8,7 @@ Stories are referenced from this page once they are passing.
 Iteration 2
 
 Iteration 1
+!see StoryTests.DriverCanPayByCreditCard
 !see StoryTests.InspectorCanCheckVehicle
 
 Iteration 0
