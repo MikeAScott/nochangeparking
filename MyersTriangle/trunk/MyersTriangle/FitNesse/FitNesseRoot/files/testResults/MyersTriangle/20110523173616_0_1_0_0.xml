@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20100303</FitNesseVersion>
+  <rootPath>MyersTriangle</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>1</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <content><![CDATA[<br/><div class="setup">
+	<div style="float: right;" class="meta"><a href="javascript:expandAll();">Expand All</a> | <a href="javascript:collapseAll();">Collapse All</a></div>
+	<a href="javascript:toggleCollapsable('1785978681851517520');">
+		<img src="/files/images/collapsableClosed.gif" class="left" id="img1785978681851517520"/>
+	</a>
+&nbsp;<span class="meta">Set Up: <a href="MyersTriangle.SetUp">.MyersTriangle.SetUp</a> <a href="MyersTriangle.SetUp?edit&amp;redirectToReferer=true&amp;redirectAction=">(edit)</a></span>
+	<div class="hidden" id="1785978681851517520"><span class="meta">variable defined: FIXTURE_PACKAGE=com.sqs.MyersTriangle.fitfixtures</span><br/><br/><table border="1" cellspacing="0">
+<tr><td>Import</td>
+</tr>
+<tr><td>com.sqs.MyersTriangle.fitfixtures</td>
+</tr>
+</table>
+</div>
+</div>
+<h1>Myers Triangle</h1><h2>Business Brief</h2>I want a function that returns the type of triangle produced given the lengths of the sides<br/><br/><table border="1" cellspacing="0">
+<tr><td>CheckApplication</td>
+</tr>
+<tr><td>name?</td>
+</tr>
+<tr><td class="fail">Wibble <span class="fit_label">expected</span><hr>MyersTriangle <span class="fit_label">actual</span></td>
+</tr>
+</table>
+<br/><br/><br/>]]></content>
+    <relativePageName>MyersTriangle</relativePageName>
+    
+    
+    
+  </result>
+  
+  
+  <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  
+</testResults>
+

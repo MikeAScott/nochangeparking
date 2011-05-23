@@ -1,0 +1,4 @@
+!define FIXTURE_PACKAGE {com.sqs.MyersTriangle.fitfixtures}
+
+!|Import|
+|${FIXTURE_PACKAGE}|

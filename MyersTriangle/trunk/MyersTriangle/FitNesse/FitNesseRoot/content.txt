@@ -1,0 +1,9 @@
+!contents
+
+!path classes
+!path fitnesse.jar
+!path fitlibrary.jar
+
+!path ../target/classes
+!path ../target/test-classes
+

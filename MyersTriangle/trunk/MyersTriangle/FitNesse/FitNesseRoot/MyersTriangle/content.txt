@@ -1,0 +1,3 @@
+!1 Myers Triangle 
+!2 Business Brief
+I want a function that returns the type of triangle produced given the lengths of the sides

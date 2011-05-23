@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20100303</FitNesseVersion>
+  <rootPath>MyersTriangle</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>2</exceptions>
+    </counts>
+    <content><![CDATA[<br/><div class="setup">
+	<div style="float: right;" class="meta"><a href="javascript:expandAll();">Expand All</a> | <a href="javascript:collapseAll();">Collapse All</a></div>
+	<a href="javascript:toggleCollapsable('-4380035033690771130');">
+		<img src="/files/images/collapsableClosed.gif" class="left" id="img-4380035033690771130"/>
+	</a>
+&nbsp;<span class="meta">Set Up: <a href="MyersTriangle.SetUp">.MyersTriangle.SetUp</a> <a href="MyersTriangle.SetUp?edit&amp;redirectToReferer=true&amp;redirectAction=">(edit)</a></span>
+	<div class="hidden" id="-4380035033690771130"><span class="meta">variable defined: FIXTURE_PATH=..\target\test-classes</span><br/><span class="meta">variable defined: SUT_PATH=..\target\classes</span><br/><span class="meta">variable defined: FIXTURE_PACKAGE=com.sqs.MyersTriangle.fitfixtures</span><br/><span class="meta">classpath: ..\target\classes</span><br/><span class="meta">classpath: ..\target\test-classes</span><br/><br/><table border="1" cellspacing="0">
+<tr><td>Import</td>
+</tr>
+<tr><td>com.sqs.MyersTriangle.fitfixtures</td>
+</tr>
+</table>
+</div>
+</div>
+<span class="meta">classpath: ../target/test-classes</span><br/><br/><h1>Myers Triangle</h1><h2>Business Brief</h2>I want a function that returns the type of triangle produced given the lengths of the sides<br/><br/><table border="1" cellspacing="0">
+<tr><td>CheckApplication</td>
+</tr>
+<tr><td class="error">Name?<hr/> <span class="fit_label">Could not find method: Name?.</span></td>
+</tr>
+<tr><td class="error">Wibble<hr><pre><div class="fit_stacktrace">java.lang.NullPointerException
+	at fit.ColumnFixture.doCell(ColumnFixture.java:37)
+	at fit.Fixture.doCells(Fixture.java:171)
+	at fit.Fixture.doRow(Fixture.java:165)
+	at fit.ColumnFixture.doRow(ColumnFixture.java:25)
+	at fit.Fixture.doRows(Fixture.java:159)
+	at fit.ColumnFixture.doRows(ColumnFixture.java:18)
+	at fit.Fixture.doTable(Fixture.java:153)
+	at fit.Fixture.interpretFollowingTables(Fixture.java:119)
+	at fit.Fixture.interpretTables(Fixture.java:105)
+	at fit.Fixture.doTables(Fixture.java:79)
+	at fit.FitServer.process(FitServer.java:81)
+	at fit.FitServer.run(FitServer.java:56)
+	at fit.FitServer.main(FitServer.java:41)
+</div></pre></td>
+</tr>
+</table>
+<br/><br/><br/>]]></content>
+    <relativePageName>MyersTriangle</relativePageName>
+    
+    
+    
+  </result>
+  
+  
+  <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  
+</testResults>
+

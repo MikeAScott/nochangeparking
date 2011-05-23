@@ -1,0 +1,6 @@
+!3 !-fit-!
+|'''Date: '''|!-5:36:45 PM (BST) on Monday, May 23, 2011-!|
+|'''Test Page: '''|.MyersTriangle|
+|'''Command: '''|!-java -cp fitnesse.jar;classes;fitnesse.jar;fitlibrary.jar;../target/classes;../target/test-classes fit.FitServer N73WK5L1 8080 13-!|
+|'''Exit code: '''|!-0-!|
+|'''Time elapsed: '''|!-0.311 seconds-!|
