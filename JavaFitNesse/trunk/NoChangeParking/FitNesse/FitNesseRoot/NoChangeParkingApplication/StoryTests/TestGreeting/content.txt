@@ -1,0 +1,23 @@
+!include .FixtureImport
+!1 Test Greeting
+To improve our customer perception rating index the company has engaged an image consultancy.  After a six month extended market perception exercise it has been decided that the application would benefit form a personalised greeting for each customer.
+!2 Greeting Function
+ * As a: customer
+ * I want to enter my name and as the system to say hello to me
+ * So that: I feel that the company values me as a person and I give a better customer satisfaction response.
+!2 Main Success Scenario
+ * Customer: enters <name>
+ * Greeting Server: says Hello <name>
+!2 Tests
+!|Check Say Hello|
+|name|Say Hello?|
+|Chuck|Hello Chuck|
+|Veronica|Hello Veronica|
+
+!2 Extended Test Scenario
+ * Customer: does not enter name
+ * Greeting server: says Hello Stranger
+!2 Tests
+!|Check Say Hello|
+|name|Say Hello?|
+|blank|Hello Stranger|

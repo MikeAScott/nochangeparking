@@ -1,0 +1,6 @@
+!2 Iteration 3: Drivers with more than one Vehicle
+!see FutureStories.RegisterMultipleVehicles
+Many drivers use more than one car regularly. We should let them register all of them, rather than just one default.
+
+!see .NoChangeParkingApplication.StoryTests.DriverCanParkDifferentVehicle
+Once they have registered multiple vehicles, it should be easy to choose which one to use when paying for parking.

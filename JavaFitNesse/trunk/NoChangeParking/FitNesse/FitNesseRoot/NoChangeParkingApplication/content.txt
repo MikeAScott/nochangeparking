@@ -1,0 +1,29 @@
+!path ..\target\test-classes
+!path ..\target\classes
+
+!1 No-Change Parking Application
+!** Business Brief
+Drivers are annoyed by our parking meters that only take coins, despite increasing parking charges. 
+The "No Change Parking" system will allow a driver to call us and pay for their parking by credit card. Since there will be no parking ticket for the driver to display on their car, Parking Inspectors must check that a vehicle in the car park is legally parked by querying the vehicle registration number in the system.
+
+**!
+!** Actors and Goals
+The table below lists the main Actors and their primary goals and interests or concerns
+|!3 Actor|!3 Primary Goal|!3 Interests / Concerns|
+|Driver|Pay for parking|Does not want to have to carry change, wants to minimise time spent paying for parking|
+|Inspector|Check cars have paid for their parking|Wants up-to-date information, and to minimise time spent checking vehicles|
+|No-Change Operator|Collect parking payments|Wants to increase revenue and reduce manual workload|
+
+**!
+!3 >StoryTests contains tests for the whole application organised by function
+!3 >IterationPlan contains pages and tests for each iteration
+!2 Story Tests are also organised by status as follows:
+!3 >CompletedStories are regression tested and must always pass
+!3 >CurrentStories are those from the >CurrentIteration  
+!3 >FutureStories are also known as the Product Backlog
+----
+!**> Subwiki Contents
+!contents -R2 -g -p -f -h
+
+**!
+

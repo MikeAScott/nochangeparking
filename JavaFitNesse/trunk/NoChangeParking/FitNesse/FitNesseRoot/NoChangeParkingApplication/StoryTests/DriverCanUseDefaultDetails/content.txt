@@ -1,0 +1,48 @@
+!1 Driver can Use Default Details or enter different details
+!3 Once a driver has registered their default details, the system will let the driver use these or enter different details
+ * As a: Driver,
+ * I want: the choice of using my default car and credit card, or different ones
+ * So that: I have the freedom to use different cars and cards when parking
+
+Main Success Scenario:
+1a Driver: make a new call to the hotline
+1b System: Lookup driver's registered details 
+
+2a System: Prompt to use the default vehicle, or a different vehicle
+2b Driver: Select default vehicle option
+
+3a System: Prompt to use default credit card, or a different one
+3a Driver: Select the default card 
+
+----
+!2 Tests
+Our Test Scenario is called:
+!|com.sqs.nochangeparking.fitfixtures.TheCallCentre|
+
+!3 When a previously registered driver calls, their registered details will be used as the defaults, and they will be able to use the default vehicle and default credit card number or different ones. 
+Given a driver John with registered details (as follows),
+|Setup Defaults|
+|Driver|Default Vehicle|Default Credit Card|
+|John|Car1|CCNum1|
+
+When John calls,
+Check that we prompt to use default vehicle (Car1) and credit card number (CCNum1) and check that John can select to use his default values, and that we use these values for the transaction. 
+
+|New Call From Driver|John|
+|check|Default Vehicle|Car1|
+|check|Default Credit Card|CCNum1|
+|check|Prompt Message|Do you wish to park Car1?|
+|Select Default Vehicle|Yes|
+|Select Default Card|Yes|
+|check|Vehicle|Car1|
+|check|Credit Card|CCNum1|
+
+!3 When an unregistered driver calls, they won't be able to use a default vehicle and default credit card number.
+Given a driver Jane (with no registered details). When Jane calls,
+ensure system won't retrieve any details for driver Jane.
+
+|New Call From Driver|Jane|
+|check|Default Vehicle||
+|check|Default Credit Card||
+|check|Prompt Message|Enter your Vehicle registration|
+

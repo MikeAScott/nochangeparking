@@ -1,0 +1,24 @@
+!1 Future Stories : 
+!2 Items on the ProductBacklog that have not been started
+This is where ideas for potential new functionality are held. 
+
+When stories from this backlog are selected for an iteration, create an iteration plan page and "include" it here. 
+
+-----
+!2 Iteration 3: Drivers with more than one Vehicle
+!3 StoryTests.RegisterMultipleVehicles
+Many drivers use more than one car regularly. We should let them register all of them, rather than just one default.
+!3 StoryTests.DriverCanParkDifferentVehicle
+Once they have registered multiple vehicles, it should be easy to choose which one to use when paying for parking.
+----
+!2 Iteration 4: Stories for Business expansion
+!3 StoryTests.MultipleParkingLocations
+We could sell this service to other carparks. Need a way of identifying which car park is being paid for. (This is probably an Epic rather than a story.) 
+!3 StoryTests.EditParkingRates
+Other car parks might not have flat parking rates. Need to set up rate tables.
+-----
+!2 Iteration 5: Parking for more than one day
+!3 StoryTests.MultiDayParking
+Some drivers want to pay for consecutive days parking with just one call, instead of calling each day.
+!3 StoryTests.ExtendParking
+If a driver has paid for parking that is still active, they should be able to extend this by one or more days

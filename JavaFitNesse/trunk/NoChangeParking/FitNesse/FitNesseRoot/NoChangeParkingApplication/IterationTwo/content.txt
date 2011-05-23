@@ -1,0 +1,8 @@
+!1 Iteration 2 
+!2 Theme: Saving Drivers details
+
+!see .NoChangeParkingApplication.StoryTests.DriverCanRegisterDefaultDetails
+A driver can store their vehicle and credit card details
+
+!see .NoChangeParkingApplication.StoryTests.DriverCanUseDefaultDetails
+Once a driver has registered their default details, the system will let the driver use these or enter different details

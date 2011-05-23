@@ -1,0 +1,7 @@
+!include .FixtureImport
+!1 Basic First Tests 
+
+!3 The application is called "NoChange Parking"
+!|Check Application|
+|name?|
+|NoChangeParking|

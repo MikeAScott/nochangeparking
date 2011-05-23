@@ -1,0 +1,7 @@
+!include .FixtureImport
+
+!3 A self-test to check that Fitnesse finds our fixture code
+|Check Addition|
+|lhs|rhs|result?|
+|1|1|2|
+|2|2|4|

@@ -1,0 +1,45 @@
+!1 A Driver can park a different vehicle to their default registered vehicle
+
+!2 Scenario
+ * As A: Driver
+ * I Want To: Pay to park a different vehicle to the default vehicle I registered   
+ * So That: I can use any of my cars in the car park
+ * This improves: Speed of parking call
+!2 Business Rules
+ * A driver can register any vehicle
+ * The system stores details of all vehicles used by the same driver
+!2 Main Success Scenario
+ 1 Driver: Make a new call to the hotline
+ 1 System: Prompt to enter name
+ 1 Driver: Provide name
+ 1 System: Retrieve registered default vehicle
+ 1 System: Prompt to use default registered vehicle or a new vehicle
+ 1 Driver: Select new vehicle, provide vehicle number
+ 1 System: Prompt to enter CCV
+ 1 Driver: Provide CCV
+ 1 System: Authorise charge to credit card 
+ 1 System: Add vehicle to the Payments List 
+ 1 System: Give a Confirmation message to the user
+!3 Extensions
+
+!2 Tests
+Our Test Scenario is called:
+!|com.sqs.nochangeparking.fitfixtures.TheCallCentre|
+!3 Logic test: Driver1 who has registered Car1 (only) will be prompted to park Car1, or register another vehicle  
+
+Given a Driver1 with registered Car1,
+!|Setup Drivers|
+|Driver|Vehicle|
+|Driver1|Car1|
+When Driver1 calls,
+!|New call from driver|Driver1|
+...
+
+Check that system prompts to park registered Car1 
+...
+
+
+!3 Logic test: Driver1 who has registered Car1 (only) can park Car2.  
+Car2 will be paid for.
+
+

@@ -1,0 +1,6 @@
+!2 Iteration 4: Stories for Business expansion
+!see .NoChangeParkingApplication.IterationFour.MultipleParkingLocations
+We could sell this service to other carparks. Need a way of identifying which car park is being paid for. (This is probably an Epic rather than a story.) 
+
+!see .NoChangeParkingApplication.IterationFour.EditParkingRates
+Other car parks might not have flat parking rates. Need to set up rate tables.

@@ -1,0 +1,9 @@
+See also: .NoChangeParkingApplication | IterationTwo
+!1 Iteration 1
+!2 These are the core stories of this application
+
+!see .NoChangeParkingApplication.StoryTests.DriverCanPayByCreditCard
+Our car park inspector can check that drivers have paid to park their vehicle.
+
+!see .NoChangeParkingApplication.StoryTests.InspectorCanCheckVehicle
+Our car park inspector can check that drivers have paid to park their vehicle.

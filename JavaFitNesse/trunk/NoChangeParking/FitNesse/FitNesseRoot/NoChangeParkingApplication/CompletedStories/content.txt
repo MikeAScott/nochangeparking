@@ -1,0 +1,18 @@
+!1 Regression Test Suite for Completed Stories
+
+This suite re-tests all stories that have been completed. They should always pass: if an error occurs here then it is a regression error and must be fixed immediately.
+
+Stories are referenced from this page once they are passing.
+
+
+Iteration 2
+
+Iteration 1
+!see StoryTests.InspectorCanCheckVehicle
+
+Iteration 0
+!see StoryTests.TestAddition
+!see StoryTests.TestApplicationInfo
+!see StoryTests.TestGreeting
+
+!contents -R

@@ -1,0 +1,29 @@
+!1 Explore Fitnesse
+ 1 Run !-TreeSurgeon-! for project !-MyName-! (done)
+ 1 Build (done)
+ 1 Start Fitnesse, browse the structure.  
+  1 Find the page !-TestApplicationInfo-!. 
+  1 What does this page tell us? 
+  1 How do we know the information there is correct?
+ 1 On the main page, edit and add each of your group/pair's names, as !-WikiWords-!
+  1 Create pages with a little text about yourselves 
+  1 Make them refer to each other (i.e. create a link to the other person from each page) 
+  1 Create a bullet list for three of your testing/development skills 
+  1 Create a numbered list for your three favourite things.
+ 1 Create a new story called "TestGreeting" on the !-FutureStories-! page. This will replicate the "Hello World" test already demonstrated.
+  1 Create a test table for a !-SayHello-! feature
+   * The feature must take a name as input, and say hello.
+  1 Try running the test. What happens? 
+  1 In Visual Studio, create a Test Fixture Class for this table in the !-'FitFixtures'-! project.
+  1 Write Unit tests needed for your design of the !-SayHello-! implementation in !-'UnitTests'-!
+  1 Run the unit tests in the NUnit GUI. What happens? Why? 
+  1 Implement the feature (in the 'Core' project.)
+  1 Run the Unit tests again. What happens? Why?
+  1 Run the Fit tests from your wiki page. What happens? Why?
+  1 Make the Fit tests pass. How did you do this?
+  1 If you have time, 
+   * write new test cases to further test the current functionality.
+   * write new (failing) test cases to specify changes to the functionality.
+
+
+  

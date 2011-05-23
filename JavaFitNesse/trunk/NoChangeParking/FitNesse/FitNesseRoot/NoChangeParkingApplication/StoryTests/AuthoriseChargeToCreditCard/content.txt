@@ -1,0 +1,7 @@
+!1 Authorise Charge to Credit Card
+
+The payments to Credit Cards must go through the Payments Gateway.
+
+We don't know how to do this yet.
+
+So for now, don't process the payments automatically. 

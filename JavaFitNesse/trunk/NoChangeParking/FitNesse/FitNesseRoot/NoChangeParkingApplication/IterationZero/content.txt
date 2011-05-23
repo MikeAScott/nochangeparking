@@ -1,0 +1,5 @@
+!1 Iteration Zero Tests
+
+These are tests that are automatically generated and should therefore pass as soon as the application structure is created by the wizard.
+
+!contents

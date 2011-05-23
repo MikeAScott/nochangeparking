@@ -1,0 +1,6 @@
+!2 Iteration 5: Parking for more than one day
+!see .NoChangeParkingApplication.IterationFive.MultiDayParking
+Some drivers want to pay for consecutive days parking with just one call, instead of calling each day.
+
+!see .NoChangeParkingApplication.IterationFive.ExtendParking
+If a driver has paid for parking that is still active, they should be able to extend this by one or more days
