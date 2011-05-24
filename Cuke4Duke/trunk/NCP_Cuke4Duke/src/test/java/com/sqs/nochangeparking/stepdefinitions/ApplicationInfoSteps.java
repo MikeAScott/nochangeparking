@@ -15,7 +15,7 @@ public class ApplicationInfoSteps {
 	}
 
 	@Then("^the application name should be \"([^\"]*)\"$")
-	public void theAppkicationNameShouldBe(String expected) {
+	public void theApplicationNameShouldBe(String expected) {
 		assertEquals(expected, this.appName);
 	}
 	

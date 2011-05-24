@@ -1,4 +1,4 @@
-﻿Feature: An Inspector Can Check A Vehicle
+Feature: An Inspector Can Check A Vehicle
 	In order to issue tickets for illegally parked cars.
 	As a Parking Inspector
 	I want to be able to check whether or not a given vehicle in the car park has paid

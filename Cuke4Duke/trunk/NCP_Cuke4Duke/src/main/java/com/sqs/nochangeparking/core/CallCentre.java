@@ -6,7 +6,7 @@ public class CallCentre {
 	private PaymentsList _todaysPayments; 
 	private DriversList _driverList; 
 
-	private CallCentre() {
+	public CallCentre() {
 	}
 	
 	public static CallCentre getInstance() {
