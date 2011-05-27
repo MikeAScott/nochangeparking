@@ -3,22 +3,23 @@
 	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
 
 	<property name="version" value="0.0.1-SNAPSHOT" />
-	<property name="jruby.home" value="tools/jruby-1.6.1"/>
+	<property name="jruby.home" value="${basedir}/lib/.jruby"/>
 
 	<property environment="env"/>
 	<property file="build.properties" />
 
-	<path id="jruby.classpath">
-		<pathelement location="${jruby.home}/lib/cuke4duke-0.4.4.jar"/>
-	</path>
+    <path id="jruby.classpath">
+      <fileset dir="lib">
+        <include name="**/*.jar"/>
+      </fileset>
+    </path>
 	
 	<path id="JUnit 4.libraryclasspath">
 		<pathelement location="lib/junit-4.8.2.jar"/>
 	</path>
 	<path id="project.classpath">
-		<pathelement location="bin"/>
+		<pathelement location="target/classes"/>
 		<path refid="JUnit 4.libraryclasspath"/>
-		<pathelement location="lib/cuke4duke-0.4.4.jar"/>
 		<pathelement location="lib/cglib-2.1_3-src.jar"/>
 		<pathelement location="lib/cglib-nodep-2.1_3.jar"/>
 		<pathelement location="lib/easymock.jar"/>
@@ -27,7 +28,7 @@
 
 	<path id="test.classpath">
 		<path refid="project.classpath" />
-		<pathelement location="target/classes/"/>
+		<path refid="jruby.classpath" />
 		<pathelement location="target/test-classes/"/>
 	</path>
 
@@ -56,9 +57,8 @@
 	<target depends="clean" name="cleanall"/>
 	<target name="build" depends="build-subprojects,build-project" />
 	<target name="test" depends="build, unit-test"  />
-	<target name="accept" depends="build, unit-test, regression-test, acceptance-test" />
-	<target name="current-test" depends="build, unit-test, acceptance-test" />
-	<target name="package" depends="build, unit-test, regression-test, jar" />
+	<target name="accept" depends="build, unit-test, acceptance-test" />
+	<target name="package" depends="build, unit-test, acceptance-test, jar" />
 
 	<target name="build-subprojects"/>
 
@@ -122,73 +122,39 @@
 		<cobertura-report format="html" srcdir="${src.dir}" destdir="${coverage.output.dir}"/>
 	</target>
 
-	<target name="story-test" >
-		<antcall target="run-fitnesse" >
-			<param name="test.suite" value="StoryTests"/>
-			<param name="allow.fail" value="true"/>
-		</antcall>
-	</target>
+	<target name="cucumber" description="Run Cucumber">
+		<property name="cucumber.output.dir" value="target/test-reports/cucumber-report" />
+		<delete dir="${cucumber.output.dir}" />
+		<mkdir dir="${cucumber.output.dir}"/>
+		<mkdir dir="${cucumber.output.dir}/TEST-features"/>
 
-	<target name="regression-test" >
-		<antcall target="run-fitnesse" >
-			<param name="test.suite" value="CompletedStories"/>
-		</antcall>
-	</target>
-
-	<target name="acceptance-test" >
-		<antcall target="run-fitnesse" >
-			<param name="test.suite" value="CurrentStories"/>
-			<param name="allow.fail" value="true"/>
-		</antcall>
-	</target>
-
-	<target name="load-fitnesse-taskdef">
-		<taskdef classpathref="project.classpath" resource="tasks.properties"/>
-	</target>
-
-	<target name="run-fitnesse"
-			description="Executes the Fitnesse Acceptance Test Suite.">
-
-		<property name="project.root" value="${ant.project.name}Application" />
-
-		<mkdir dir="${fitnesse.output.dir}"/>
-		<condition property="suite.name" value="${test.suite}" else="StoryTests" >
+		<condition property="suite.name" value="${test.suite}" else="features" >
 			<isset property="test.suite" />
 		</condition>
-
-		<echo>--------------------------------------------------</echo>
-		<echo>Running ${suite.name} Suite</echo>
-		<echo>--------------------------------------------------</echo>
-
-		<property name="report.file" value="${fitnesse.output.dir}/${suite.name}.report.html" />
-
-		<junit fork="yes" printsummary="withOutAndErr" haltonfailure="false" failureproperty="failures">
-			<formatter type="xml"/>
-			<classpath refid="test.classpath"/>
-			<batchtest fork="yes" todir="${fitnesse.output.dir}">
-				<fileset dir="target/test-classes">
-					<include name="**/suites/${suite.name}Suite.class"/>
-				</fileset>
-			</batchtest>
-		</junit>		
-
-		<if>
-			<isset property="failures" />
-			<then>
-				<echo>***************************************************************</echo>
-				<echo>Fitnesse: failues/exceptions in ${suite.name} suite</echo>
-				<echo>***************************************************************</echo>
-			</then>
-		</if>
-
-		<fail message="Fitnesse: failues/exceptions in ${suite.name} suite" >
-			<condition>
-				<and>
-					<isset property="failures"/>
-					<not><isset property="allow.fail" /></not>
-				</and>
-			</condition>
-		</fail>
+		
+		<taskdef name="cucumber" classname="cuke4duke.ant.CucumberTask" 
+			classpathref="jruby.classpath"/>
+		
+		<cucumber
+	        args="--verbose --require target/test-classes 
+				--color	--format pretty
+				--format junit --out ${cucumber.output.dir}
+				--format html --out ${cucumber.output.dir}/Suite-${suite.name}.html
+			    ${suite.name}"
+	        	objectFactory="pico">
+			<classpath>
+				<path refid="project.classpath" />
+				<pathelement location="target/test-classes"/>
+				<pathelement location="target/classes"/>
+			</classpath>
+		</cucumber>		
+	</target>
+		
+	<target name="acceptance-test" >
+		<antcall target="cucumber" >
+			<param name="test.suite" value="features"/>
+			<param name="allow.fail" value="true"/>
+		</antcall>
 	</target>
 
 	<target name="jar">
@@ -198,9 +164,16 @@
 
 	<target name="setup-cuke4duke" >
 		<unzip src="${tools.dir}/jruby-bin-1.6.1.zip" dest="${tools.dir}" />
-		<exec executable="${jruby.home}/bin/jruby.exe">
+		<exec executable="${jruby.home}/bin/jruby">
 			<arg line="-S gem  install cuke4duke"/>
 		</exec>
+	</target>
+	
+	<target name="install-gems" >
+	    <taskdef name="gem" classname="cuke4duke.ant.GemTask"
+	       classpathref="jruby.classpath"/>
+	    <gem args="install cuke4duke --source http://gemcutter.org/"/>
+	    <gem args="install syntax --source http://gemcutter.org/"/>
 	</target>
 	
 </project>

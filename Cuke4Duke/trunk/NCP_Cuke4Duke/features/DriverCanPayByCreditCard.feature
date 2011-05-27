@@ -18,7 +18,7 @@ Background:
 Scenario: Once paid, a vehicle appears on the Payments list
 	
 	When We get a new call from driver 'Dave'
-	And He pays to park 'Red Polo' with a valid credit card
+	And He pays to park 'Green Polo' with a valid credit card
 	
 	Then the payment should be accepted
 	And the payments list should show
@@ -30,7 +30,7 @@ Scenario: Once paid, a vehicle appears on the Payments list
 @driver
 Scenario: Reject duplicate payment for same vehicle, but leave existing payment on the payments list
 
-	When We get a new call from driver 'Dave'
+	When We get a new call from driver 'AnyDriver'
 	And He pays to park 'Car7' with a valid credit card
 	Then the payment should be rejected
 	And the payments list should show
