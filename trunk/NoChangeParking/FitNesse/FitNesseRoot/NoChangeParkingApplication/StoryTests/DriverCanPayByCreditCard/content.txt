@@ -1,0 +1,61 @@
+!1 A Driver can pay for parking a vehicle by Credit Card
+
+!2 Scenario
+ * As A: Driver
+ * I Want To: Pay for my parking by credit card  
+ * So That: I dont have to use coins in a parking meter
+!2 Business Rules
+ * To pay for parking, a Driver must give their Vehicle Registration and Credit Card Number
+ * A vehicle is considered not paid for if it is not on the current payments list
+ * Once paid, the vehicle is logged on the Payments list
+!2 Main Success Scenario
+ 1 Driver: Make a new call to the hotline 
+ 1 System: Ask driver for vehicle and credit card number
+ 1 Driver: Provides vehicle and credit card number
+ 1 System: Prompt to enter CCV
+ 1 Driver: Enter credit card CCV number
+ 1 System: AuthoriseChargeToCreditCard 
+ 1 System: Add vehicle to the Payments List 
+ 1 System: Give a Confirmation message to the user
+
+!3 Extensions
+6a CC authorisation fails: exit without adding vehicle to Payments list
+
+!2 Tests
+Our test context is:
+!|${namespace}.TheCallCentre|
+!include -c .FixtureImport
+
+!3 Logic test: once paid, a vehicle appears on the Payments list
+
+Given a payments list that does not include Car3,
+!|Setup Payments|
+|Vehicle|
+|Car1|
+|Car2|
+When a driver pays for Car3 with a valid credit card
+!|New call from driver|Dave|
+|Pay for Vehicle|Car3|With Credit Card|ValidCardNumber1|
+
+Check that Car3 is added to the Payments List
+!|Todays Payments|
+|Vehicle|
+|Car1|
+|Car2|
+|Car3|
+ 
+!3 Reject duplicate payment for same vehicle, but leave existing payment on the payments list
+
+!|New call from driver|Dave|
+|reject|Pay for Vehicle|Car3|With Credit Card|AnotherValidCardNumber|
+
+!|Todays Payments|
+|Vehicle|
+|Car1|
+|Car2|
+|Car3|
+
+
+
+
+

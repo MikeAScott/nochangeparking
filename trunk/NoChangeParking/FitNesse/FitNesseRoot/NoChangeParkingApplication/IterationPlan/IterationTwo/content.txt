@@ -1,0 +1,10 @@
+!1 Iteration 2
+!2 Iteration Theme
+Enable Drivers to pay for parking
+
+!2 These are the stories for this iteration
+
+!see .NoChangeParkingApplication.StoryTests.DriverCanPayByCreditCard
+!see .NoChangeParkingApplication.StoryTests.DriverCanRegisterDefaultDetails
+!see .NoChangeParkingApplication.StoryTests.DriverCanUseDefaultDetails
+

@@ -1,0 +1,2 @@
+!define FIXTURE_PATH {..\build\Debug\NoChangeParking.FitFixtures\*.dll}
+!define namespace {NoChangeParking.FitFixtures}

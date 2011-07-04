@@ -1,0 +1,83 @@
+!1 A Driver can register their default details
+!3 The Driver's Vehicle registration and Credit Card number can be stored, using the driver's phone number as the index
+ * As a: Driver
+ * I want to: save my Vehicle registration and credit card number in the system
+ * So that: I save time when parking
+ * This improves: Speed of parking call
+----
+!2 Main Success Scenario
+1a Driver: Call the No-Change telephone number
+1b System: (Lookup caller and check that no details have been registered yet) Prompt to register a vehicle
+
+2a Driver: Enter Vehicle registration
+2b System: Store the values, prompt to register a Credit Card
+
+3a Driver: Enter a Credit Card number
+3b System: Store the value
+
+!3 Extensions
+1b Details already registered: exit
+----
+!2 Tests
+Our Test Context is:
+!|NoChangeParking.FitFixtures.TheCallCentre|
+!include .FixtureImport
+
+!3 A driver who has not registered details will not have any default Vehicle or CC number stored.
+Given that our list of registered drivers does not include new driver John,
+!|Setup Registered Drivers|
+|Driver|Default Vehicle|Default Credit Card|
+|Jane|Car5|CC2|
+
+
+When John calls,
+Check that John's default values are blank
+
+|New Call from Driver|John|
+|check|Vehicle||
+|check|Credit Card||
+
+!3 Registering details set these as the default for this driver's number.
+When the driver registers Car1 and CCNum1
+Check that the driver's default values are Car1 and CCNum1
+|New Call from Driver|John|
+|Register Vehicle|Car1|
+|Register Credit Card|CCNum1|
+|check|Vehicle|Car1|
+|check|Credit Card|CCNum1|
+
+|Registered Drivers|
+|Id|Default Vehicle|Default Credit Card|
+|Jane|Car5|CC2|
+|John|Car1|CCNum1|
+
+!3 When a previously registered driver calls, their registered details will be used as the defaults
+Given two drivers John and Jane with registered details (as follows),
+
+|Setup Registered Drivers|
+|Driver|Default Vehicle|Default Credit Card|
+|Jane|Car2|CCNum2|
+|John|Car1|CCNum1|
+
+When John makes a call to us,
+Check that John's default values (Car1 and CCNum1) are retrieved
+
+|New Call from Driver|John|
+|check|Vehicle|Car1|
+|check|Credit Card|CCNum1|
+
+
+When Jane makes a call to us,
+Check that Jane's default values (Car2 and CCNum2) are retrieved
+
+|New Call from Driver|Jane|
+|check|Vehicle|Car2|
+|check|Credit Card|CCNum2|
+
+When an unregistered driver makes a call to us,
+Check that no default values are retrieved
+
+|New Call from Driver|Peter|
+|check|Vehicle||
+|check|Credit Card||
+

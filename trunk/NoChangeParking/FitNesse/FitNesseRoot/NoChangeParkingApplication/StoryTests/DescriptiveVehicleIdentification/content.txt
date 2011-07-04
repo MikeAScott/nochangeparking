@@ -1,0 +1,10 @@
+!1 Driver can select vehicles using descriptive Identification
+
+As a driver
+I want to select my vehicle from friendly descriptions instead of Registration Number
+
+
+For example:
+"To park your Black Vauxhall Astra..."
+instead of "To park your Vehicle R197XMJ"
+

@@ -1,0 +1,75 @@
+!1 Driver can Use Default Details or enter different details
+!3 Once a driver has registered their default details, the system will let the driver use these or enter different details
+ * As a: Driver,
+ * I want: the choice of using my default car and credit card, or different ones
+ * So that: I have the freedom to use different cars and cards when parking
+
+Main Success Scenario:
+1a Driver: make a new call to the hotline
+1b System: Lookup driver's registered details
+
+2a System: Prompt to use the default vehicle and credit card, or different ones
+2b Driver: Select default vehicle and credit card option
+
+3a: System: Process payment using default vehicle and credit card
+
+Extensions:
+2a: System finds no details for this driver: Prompt to enter vehicle and credit card
+
+2b: Driver does not select default details: Prompt to enter vehicle and credit card
+
+----
+!2 Tests
+Our test context is:
+!|NoChangeParking.FitFixtures.TheCallCentre|
+!include -c .FixtureImport
+
+|Clear Todays Payments|
+!3 MSS: When a previously registered driver calls, their registered details will be used as the defaults, and they will be able to use the default vehicle and default credit card number or different ones.
+Given a driver John with registered details (as follows),
+!|Setup Registered Drivers|
+|Driver|Default Vehicle|Default Credit Card|
+|John|Car1|CCNum1|
+
+When John calls,
+Check that his default default vehicle (Car1) and credit card number (CCNum1) are retrieved
+and used in the prompt
+When John selects to use the default values,
+check that we use these values for the transaction.
+
+!|New Call From Driver|John|
+|check|DriverIsRegistered|true|
+|check|Prompt Message|Do you wish to pay for Car1 using Credit Card CCNum1?|
+|Pay Parking for Today|
+|check|Vehicle|Car1|
+
+!3 Extension 2a: When an unregistered driver calls, they won't be able to use a default vehicle and default credit card number.
+Given a driver Jane (with no registered details).
+When Jane calls, ensure system won't retrieve any details for driver Jane, and prompts her to enter them.
+
+!|New Call From Driver|Jane|
+|check|DriverIsRegistered|false|
+|check|Vehicle||
+|check|Credit Card||
+|check|Prompt Message|Enter your Vehicle registration and Credit Card number|
+
+!3 Extension 2a: When an unregistered driver calls, they won't be able to use a default vehicle and default credit card number.
+Given a driver Marta (with no registered details).
+When Marta calls, the system prompts her to enter. When she has entered them the system will prompt to use the defaults.
+
+!|New Call From Driver|Marta|
+|check|DriverIsRegistered|false|
+|check|Prompt Message|Enter your Vehicle registration and Credit Card number|
+|Register Vehicle|RedCar|
+|Register Credit Card|HusbandsCC|
+|check|Vehicle|RedCar|
+|check|Credit Card|HusbandsCC|
+
+!3 Extension 2b: Registered driver does not select their defaults: prompt to enter vehicle and credit card.
+
+!|New Call From Driver|John|
+|check|DriverIsRegistered|true|
+|check|Prompt Message|Do you wish to pay for Car1 using Credit Card CCNum1?|
+|Select Defaults|false|
+|check|Prompt Message|Enter your Vehicle registration and Credit Card number|
+

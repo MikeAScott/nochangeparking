@@ -1,0 +1,11 @@
+!1 In Progress Stories
+!2 These are the stories still to be completed in the CurrentIteration
+
+Stories are referenced on this page (and removed from FutureStories) when their iteration starts.
+
+To check the progress of story completion for this iteration, run the Suite on the CurrentIteration page.
+If you test the stories on this page (press the "Suite" button) we expect the acceptance tests to fail (red) or throw exceptions (yellow).
+When a story is complete and all the tests pass (green), remove it from this page and reference it on CompletedStories.
+
+
+

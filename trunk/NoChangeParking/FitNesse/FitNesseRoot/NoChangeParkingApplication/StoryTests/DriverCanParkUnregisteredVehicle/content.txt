@@ -1,0 +1,7 @@
+!1 A driver can Park a Vehicle they have not registered
+
+As a driver
+I want to be able to park a vehicle I have not previously registered
+This improves flexibility
+
+See also DriverCanUseDefaultDetails

@@ -1,0 +1,9 @@
+!1 Iteration 3
+!2 Iteration Theme
+Extending parking duration
+Encourage customers to stay for longer periods
+
+!2 These are the stories for this iteration
+
+.NoChangeParkingApplication.StoryTests.ChangeParkingRate
+.NoChangeParkingApplication.StoryTests.MultiDayParking

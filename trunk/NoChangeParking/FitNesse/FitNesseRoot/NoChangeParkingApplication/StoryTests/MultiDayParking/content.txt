@@ -1,0 +1,82 @@
+!1 A Driver can pay for multiple days parking
+
+Our test context is:
+!|NoChangeParking.FitFixtures.TheCallCentre|
+
+!|Clear Todays Payments|
+
+!include -c .FixtureImport
+
+Drivers can specify how many days parking they want to park for (up to 7 days).
+
+As a: Driver
+I want to: phone up and pay for multiple days parking
+So that:  I don't need to make several calls for long stays
+
+Need to:
+ * specify number of days when calling
+ * reject if more than 7 days
+ * calculate amount to pay.  e.g. 
+
+|Check total cost based on |£5.50|daily rate|
+|Duration | Payment Amount?|
+|1|£5.50|
+|2|£11.00|
+|7|£38.50|
+|8|error|
+
+!2 Default is to pay for 1 day
+!|New call from driver|	John |
+|Pay for Vehicle|Car66|With Credit Card|ValidCardNumber1|
+|check|Paid for Days|1|
+|check|Price|£5.00|
+
+!2 When a driver pays for 2 days charge is £10.00
+!|New call from driver|	Mike|
+|Pay for Vehicle|Car67|With Credit Card|ValidCardNumber1|for|2|days|
+|check|Paid for Days|2|
+|check|Price|£10.00|
+
+ * A registered driver with defaults can pay for multiply days parking
+Given registered drivers John with registered details (as follows),
+!|Setup Registered Drivers|
+|Driver|Default Vehicle|Default Credit Card|
+|John|Car1|CCNum1|
+|Bert|Car3|CCNum2|
+
+When John calls to pay for parking he can pay for multiple days
+!|New Call from Driver |John|
+|Pay Parking For |4 |Days|
+|check|Paid For Days|4|
+
+Default is to pay for 1 day
+!|New Call from Driver |Bert|
+|Pay Parking For Today|
+|check|Paid For Days|1|
+
+ * need to know which cars are still valid today 
+
+e.g.
+
+Given the following calendar:
+
+|Setup Calendar|
+|Day|Date|
+|Monday|01/02/2010|
+|Today|02/02/2010|
+|Now|02/02/2010 9:50|
+|Wednesday|03/02/2010|
+
+|Check parking validity for |Now|
+|Date Paid| Paid for days| Is valid?|Expiry?|PaymentDate?|Expiry Date?|
+|Monday|1|no|Monday|||
+|Monday|2|yes|Today|||
+|Today|1|yes|Today|||
+|Today|2|yes|Wednesday|||
+
+Assume:
+ First day is today
+
+
+
+

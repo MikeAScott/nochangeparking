@@ -1,0 +1,14 @@
+!1 Iteration 1
+!2 Iteration Theme
+Allow inspectors to check vehicles
+
+!2 These are the stories for this iteration
+
+!see .NoChangeParkingApplication.StoryTests.TestApplicationInfo
+Ensure that the application information provider is correct 
+
+!see .NoChangeParkingApplication.StoryTests.InspectorCanCheckVehicle
+An inspector can check whether or not a given vehicle in the car park has paid
+
+
+

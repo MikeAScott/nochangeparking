@@ -1,0 +1,38 @@
+!1 An Inspector Can Check A Vehicle
+
+!2 Scenario
+ * As A: Parking Inspector
+ * I Want To: Check whether or not a given vehicle in the car park has paid 
+ * So That: We can issue tickets for illegally parked cars.
+
+!2 Tests
+Our test context is:
+!|NoChangeParking.FitFixtures.TheCallCentre|
+!include -c .FixtureImport
+!2 Business Rules
+Given that these vehicles have paid:
+!|Setup Payments|
+|Vehicle|
+|Car1|
+|Car2|
+
+
+An Inspector can check that individual vehicles are paid for or not.
+If a car is on the list then the system returns true when checking the Registration number. 
+For example:
+!|Vehicle | Car2 |Has Paid|
+|Vehicle | Carx |Has Not Paid|
+
+If we setup a different payments list any previous list is cleared
+!|Setup Payments|
+|Vehicle|
+|Car3|
+
+!|Vehicle | Car1 |Has Not Paid|
+
+|Vehicle | Car2 |Has Not Paid|
+
+|Vehicle | Car3 |Has Paid|
+
+
+

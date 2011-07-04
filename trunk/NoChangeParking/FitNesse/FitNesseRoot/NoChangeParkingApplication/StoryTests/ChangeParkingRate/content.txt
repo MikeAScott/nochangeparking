@@ -1,0 +1,12 @@
+!1 Car Park Operator can change the daily Parking Rate
+
+!3 Story
+As a Car park operator
+I want to be able to set the cost of parking in my car park (instead of the current fixed price of £5 per day).
+This improves expansion
+
+!3 Rules
+Standard all-day rate is £5
+Off-peak (after 10am) is £3
+Weekly (up to 7 days) is £20
+Weekend daily rate (Sat/Sun) is £2
