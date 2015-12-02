@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Welcome to No Change Parking</h1>
+    <p>The easy way to park your car</p>
+    <p class="lead">Please Chose from the Following Options</p>
+    <p>@Html.ActionLink("Register >>", "Create", "PaymentDetails",null, new { @class="btn btn-primary btn-lg" })</p>
+    <p>@Html.ActionLink("Verify Payment >>", "Check", "VerifyPayments",null, new { @class="btn btn-primary btn-lg" })</p>
+    <p>@Html.ActionLink("Contact Us >>", "Contact", "Home",null, new { @class="btn btn-primary btn-lg" })</p>
+
+</div>

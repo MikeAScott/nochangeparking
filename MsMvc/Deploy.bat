@@ -1,0 +1,1 @@
+msbuild /target:Deploy /p:password=Tra!ning01

@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoChangeParking", "NoChangeParking\NoChangeParking.csproj", "{74B0C5B5-3D63-41B4-947F-A433926C5396}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoChangeParking.Tests", "NoChangeParking.Tests\NoChangeParking.Tests.csproj", "{4E2E69C0-F060-4E9D-98E6-CD646455D952}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A148BFD4-D04A-4404-81A4-4877D8F9E9CD}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{923D93ED-D002-4EDA-B9F6-DDDCC79ED99D}"
+	ProjectSection(SolutionItems) = preProject
+		..\Build.proj = ..\Build.proj
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.70.130:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = NoChangeParking.Tests\\NoChangeParking.Tests.csproj
+		SccProjectName1 = NoChangeParking.Tests
+		SccLocalPath1 = NoChangeParking.Tests
+		SccProjectUniqueName2 = NoChangeParking\\NoChangeParking.csproj
+		SccProjectName2 = NoChangeParking
+		SccLocalPath2 = NoChangeParking
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74B0C5B5-3D63-41B4-947F-A433926C5396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74B0C5B5-3D63-41B4-947F-A433926C5396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74B0C5B5-3D63-41B4-947F-A433926C5396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74B0C5B5-3D63-41B4-947F-A433926C5396}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E2E69C0-F060-4E9D-98E6-CD646455D952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E2E69C0-F060-4E9D-98E6-CD646455D952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E2E69C0-F060-4E9D-98E6-CD646455D952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E2E69C0-F060-4E9D-98E6-CD646455D952}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

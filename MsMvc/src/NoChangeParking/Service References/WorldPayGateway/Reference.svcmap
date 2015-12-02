@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8ed75d81-b36a-4373-bfd7-518e30c4bf6a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.70.130/worldpaygateway/PaymentsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PaymentsService.disco" MetadataType="Disco" ID="ce7fcfdb-b0f1-4db6-9d2c-e487aefd8ca3" SourceId="1" SourceUrl="http://192.168.70.130/WorldPayGateway/PaymentsService.svc?disco" />
+    <MetadataFile FileName="PaymentsService.wsdl" MetadataType="Wsdl" ID="b26ac07c-250b-4407-b9b1-cfff76f576c2" SourceId="1" SourceUrl="http://192.168.70.130/WorldPayGateway/PaymentsService.svc?wsdl" />
+    <MetadataFile FileName="PaymentsService.xsd" MetadataType="Schema" ID="1f4cd882-4643-4724-8771-ca38c6c030d1" SourceId="1" SourceUrl="http://192.168.70.130/WorldPayGateway/PaymentsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PaymentsService1.xsd" MetadataType="Schema" ID="9d367365-fed1-4e42-8bc0-6cd2b56f5cf9" SourceId="1" SourceUrl="http://192.168.70.130/WorldPayGateway/PaymentsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PaymentsService2.xsd" MetadataType="Schema" ID="6117b9f0-b2e4-4529-a3c4-0cb91b761206" SourceId="1" SourceUrl="http://192.168.70.130/WorldPayGateway/PaymentsService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
